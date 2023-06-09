@@ -1,6 +1,7 @@
 import React from 'react';
 import {View,Image,StyleSheet, SafeAreaView, Text, StatusBar, TouchableOpacity} from 'react-native';
 
+
 const Viewstart = () => {
     return (
         <SafeAreaView style={styles.container}>
