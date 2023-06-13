@@ -1,33 +1,39 @@
 import React from 'react';
-import {View, Text,StyleSheet} from 'react-native';
+import {View, Text,StyleSheet, TouchableOpacity} from 'react-native';
 import {FontAwesome5} from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
 const ijo='#04450B'
 
-const Navbar = () => {
+const Cardmenu = () => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
                 <View style={{alignItems:'center'}}>
-                    <View style={styles.whitebg}>
-                        <FontAwesome5 name="receipt" size={30} color={ijo} />
-                    </View>
+                    <TouchableOpacity>
+                        <View style={styles.whitebg}>
+                            <FontAwesome5 name="receipt" size={30} color={ijo} />
+                        </View>
+                    </TouchableOpacity>
                     <Text>Package</Text>
                     <Text>Menu</Text>
                 </View>
                 <View style={{alignItems:'center'}}>
-                    <View style={styles.whitebg}>
-                        <MaterialIcons name="restaurant-menu" size={30} color={ijo} />
-                    </View>
+                    <TouchableOpacity>    
+                        <View style={styles.whitebg}>
+                            <MaterialIcons name="restaurant-menu" size={30} color={ijo} />
+                        </View>
+                    </TouchableOpacity>
                     <Text>Food</Text>
                     <Text>Menu</Text>
                 </View>
                 <View style={{alignItems:'center'}}>
-                    <View style={styles.whitebg}>
-                        <FontAwesome5 name='mug-hot' size={30} color={ijo}/>
-                    </View>
+                    <TouchableOpacity>
+                        <View style={styles.whitebg}>
+                            <FontAwesome5 name='mug-hot' size={30} color={ijo}/>
+                        </View>
+                    </TouchableOpacity>
                     <Text>Drink</Text>
                     <Text>Menu</Text>
                 </View>
@@ -63,4 +69,4 @@ const styles = StyleSheet.create({
     
 })
 
-export default Navbar;
+export default Cardmenu;

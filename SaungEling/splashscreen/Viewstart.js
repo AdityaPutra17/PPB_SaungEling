@@ -1,32 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {View,Image,StyleSheet, SafeAreaView, Text, StatusBar, TouchableOpacity} from 'react-native';
 
 
-const Viewstart = () => {
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.bg}>
-                <Image source={require('../assets/bg.png')} style={{height:400}}/>
-            </View>
-            <View style={styles.rounded}>
-                <View style={styles.text}>
-                    <Text style={styles.textjdl}>Saung Eling Apps</Text>
-                    <Text style={styles.textjdl}>Administrator</Text>
+class Viewstart extends Component {
+    render() {
+        return (
+            <SafeAreaView style={styles.container}>
+                <View style={styles.bg}>
+                    <Image source={require('../assets/bg.png')} style={{height:400}}/>
                 </View>
-                <View style={{marginTop:36}}>
-                    <Text style={styles.deskipsi}>Saung Eling Apps merupakan aplikasi</Text>
-                    <Text style={styles.deskipsi}>untuk mengelola layanan Saung Eling</Text>
-                    <Text style={styles.deskipsi}>Seperti Mengelola Travel Package </Text>
-                    <Text style={styles.deskipsi}>Destinasi, kuliner, Reservasi dan Gallery</Text>
+                <View style={styles.rounded}>
+                    <View style={styles.text}>
+                        <Text style={styles.textjdl}>Saung Eling Apps</Text>
+                        <Text style={styles.textjdl}>Administrator</Text>
+                    </View>
+                    <View style={{marginTop:36}}>
+                        <Text style={styles.deskipsi}>Saung Eling Apps merupakan aplikasi</Text>
+                        <Text style={styles.deskipsi}>untuk mengelola layanan Saung Eling</Text>
+                        <Text style={styles.deskipsi}>Seperti Mengelola Travel Package </Text>
+                        <Text style={styles.deskipsi}>Destinasi, kuliner, Reservasi dan Gallery</Text>
+                    </View>
+                    <TouchableOpacity style={styles.btn}>
+                        <Text style={{fontSize:20,fontWeight:'bold', color:"#fff", textAlign:'center'}}>Get Started</Text>
+                    </TouchableOpacity>        
                 </View>
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={{fontSize:20,fontWeight:'bold', color:"#fff", textAlign:'center'}}>Get Started</Text>
-                </TouchableOpacity>        
-            </View>
-            <StatusBar style='light'/>
-        </SafeAreaView>
-        
-    );
+                <StatusBar style='light'/>
+            </SafeAreaView>
+        );
+    }
 }
 
 const styles = StyleSheet.create({

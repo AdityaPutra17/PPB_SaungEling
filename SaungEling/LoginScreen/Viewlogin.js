@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
-import {View,Text, TouchableOpacity,StyleSheet, Image, TextInput, SafeAreaView, StatusBar,} from 'react-native';
+import {View,Text, TouchableOpacity,StyleSheet, Image, TextInput, SafeAreaView, StatusBar, Pressable,} from 'react-native';
 import { CheckBox } from 'react-native-elements';
+import {FontAwesome5} from '@expo/vector-icons';
+
 const ijo='#04450B'
 
 const Viewlogin = () => {
     const [checked, setChecked] = useState(false);
+    const [isOpenPass, setOpenPass] = useState(true);
+    const hendlerOpenpass = () =>{
+        switch (!isOpenPass){
+            case true:
+                setOpenPass(true);
+                break;
+            default:
+                setOpenPass(false);
+                break;
+        }
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -25,11 +38,15 @@ const Viewlogin = () => {
                 </View>
                 <View style={styles.email}>
                     <Text style={{marginBottom:12}}>Password :</Text>
-                    <TextInput
-                        placeholder='Input Your Password'
-                        secureTextEntry={true}
-                        style={{padding:10, borderWidth:1, borderColor:ijo, borderRadius:10}}
-                    />
+                    <View style={styles.pass}>
+                        <TextInput
+                            placeholder='Input Your Password'
+                            secureTextEntry={isOpenPass}
+                        />
+                        <Pressable onPress={()=>hendlerOpenpass()}>
+                            <FontAwesome5 name={(isOpenPass) ? "eye":"eye-slash"} size={24} color={ijo} />
+                        </Pressable>
+                    </View>
                 </View>
                 <View style={styles.remamberme}>
                     <View style={{marginLeft:15}}>
@@ -83,6 +100,15 @@ const styles = StyleSheet.create({
     email:{
         marginTop:32,
         paddingHorizontal:36
+    },
+    pass:{
+        flexDirection:'row',
+        padding:10, 
+        borderWidth:1, 
+        borderColor:ijo, 
+        borderRadius:10,
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     remamberme:{
         flexDirection:'row',
