@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import {View,Image,StyleSheet, SafeAreaView, Text, StatusBar, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {View, StyleSheet, SafeAreaView, Image, Text, TouchableOpacity, StatusBar    } from 'react-native';
 
-
-class Viewstart extends Component {
-    render() {
-        return (
-            <SafeAreaView style={styles.container}>
+const Viewstart = ({navigation}) => {
+    return (
+        <SafeAreaView style={styles.container}>
                 <View style={styles.bg}>
                     <Image source={require('../assets/bg.png')} style={{height:400}}/>
                 </View>
@@ -20,7 +18,7 @@ class Viewstart extends Component {
                         <Text style={styles.deskipsi}>Seperti Mengelola Travel Package </Text>
                         <Text style={styles.deskipsi}>Destinasi, kuliner, Reservasi dan Gallery</Text>
                     </View>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Login')}>
                         <Text style={{fontSize:20,fontWeight:'bold', color:"#fff", textAlign:'center'}}>Get Started</Text>
                     </TouchableOpacity>        
                 </View>
@@ -28,7 +26,8 @@ class Viewstart extends Component {
             </SafeAreaView>
         );
     }
-}
+
+
 
 const styles = StyleSheet.create({
     container:{
@@ -68,5 +67,8 @@ const styles = StyleSheet.create({
         marginTop:36
     }
 })
+
+
+
 
 export default Viewstart;

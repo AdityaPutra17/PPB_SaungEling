@@ -8,7 +8,7 @@ class Foodmenu extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.judul}>
-                    <Text style={styles.teks}>Drink Menu</Text>
+                    <Text style={styles.teks}>Food Menu</Text>
                 </View>
                 <View style={styles.Searchbar}>
                     <Searchbar/>

@@ -8,6 +8,9 @@ const ijo='#04450B';
 
 class Homeview extends Component {
     render() {
+        
+        const {navigation} = this.props;
+
         return (
         <SafeAreaView style={{flex:1, paddingHorizontal:20, marginTop:10}}>
             <View style={{flex:1}}>
@@ -24,7 +27,7 @@ class Homeview extends Component {
                 <Searchbar/>
             </View>
             <View style={{flex:1}}>
-                <Cardmenu/>
+                <Cardmenu navigation={navigation}/>
             </View>
             <View style={{flex:2}}>
                 <Content/>

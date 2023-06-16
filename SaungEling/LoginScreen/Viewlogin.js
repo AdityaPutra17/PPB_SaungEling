@@ -5,7 +5,7 @@ import {FontAwesome5} from '@expo/vector-icons';
 
 const ijo='#04450B'
 
-const Viewlogin = () => {
+const Viewlogin = ({navigation}) => {
     const [checked, setChecked] = useState(false);
     const [isOpenPass, setOpenPass] = useState(true);
     const hendlerOpenpass = () =>{
@@ -63,7 +63,7 @@ const Viewlogin = () => {
                     </TouchableOpacity>
                 </View>
                 <View style={{alignItems:'center'}}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Home')}>
                         <Text style={{fontSize:20,fontWeight:'bold', color:"#fff", textAlign:'center'}}>Log In</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.register}>
