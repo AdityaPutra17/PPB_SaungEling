@@ -6,7 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const ijo='#04450B'
 
-const Cardmenu = () => {
+const Cardmenu = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
@@ -20,7 +20,7 @@ const Cardmenu = () => {
                     <Text>Menu</Text>
                 </View>
                 <View style={{alignItems:'center'}}>
-                    <TouchableOpacity>    
+                    <TouchableOpacity onPress={()=>navigation.navigate('food')}>    
                         <View style={styles.whitebg}>
                             <MaterialIcons name="restaurant-menu" size={30} color={ijo} />
                         </View>
